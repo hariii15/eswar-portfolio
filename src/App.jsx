@@ -45,6 +45,42 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  // Comprehensive Asset Preloader (Images & Videos)
+  useEffect(() => {
+    // 1. Preload Images into Cache
+    const imageUrls = [
+      '/Images/logo.png',
+      '/Images/me.jpeg',
+      '/ecti/1.png', '/ecti/2.png', '/ecti/3.png', '/ecti/4.png', '/ecti/5.png', '/ecti/6.png',
+      '/logos/pr.png', '/logos/capcut.png', '/logos/ps.png', '/logos/canva.png',
+      '/logos/notion.svg', '/logos/linearr.png', '/logos/gpt.png', '/logos/claude logo.svg',
+      '/logos/flow.webp', '/logos/kling.png', '/logos/hyperframes.png', '/logos/remotion.png',
+      '/Images/e1.png', '/Images/e2.png', '/Images/b1.png', '/Images/b2.png',
+      '/Workflow/Storyboard.png', '/Workflow/Moodboard.png'
+    ];
+
+    imageUrls.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+
+    // 2. Preload Videos into Browser RAM & HTTP Cache
+    const videoUrls = [
+      '/Videos/L1.mp4',
+      '/Videos/R1.mp4',
+      '/Videos/L2.mp4',
+      '/Videos/R2.mp4',
+      '/Workflow/Output.mp4'
+    ];
+
+    videoUrls.forEach((src) => {
+      const tempVideo = document.createElement('video');
+      tempVideo.preload = 'auto';
+      tempVideo.src = src;
+      tempVideo.load();
+    });
+  }, []);
+
   useEffect(() => {
     if (isAchievementPaused) return;
     const interval = setInterval(() => {
@@ -647,6 +683,7 @@ function App() {
                     ref={el => videoRefs.current[0] = el}
                     src={videoProjects[0].videoUrl}
                     style={styles.videoThumb}
+                    preload="auto"
                     muted
                     loop
                     playsInline
@@ -679,6 +716,7 @@ function App() {
                     ref={el => videoRefs.current[1] = el}
                     src={videoProjects[1].videoUrl}
                     style={styles.videoThumb}
+                    preload="auto"
                     muted
                     loop
                     playsInline
@@ -746,6 +784,7 @@ function App() {
                     ref={el => videoRefs.current[3] = el}
                     src={videoProjects[3].videoUrl}
                     style={styles.videoThumb}
+                    preload="auto"
                     muted
                     loop
                     playsInline
@@ -935,6 +974,7 @@ function App() {
                       <video 
                         src="/Workflow/Output.mp4" 
                         className="screener-video-element" 
+                        preload="auto"
                         autoPlay
                         loop
                         muted
@@ -1000,15 +1040,15 @@ function App() {
 
           <div style={styles.timelineWrapper} className="fade-up-element">
             {experienceData.map((exp, idx) => (
-              <div key={idx} style={styles.experienceTimelineRow}>
-                <div style={styles.timelineSideLabel}>
-                  <div style={styles.timelineLogoContainer}>
+              <div key={idx} style={styles.experienceTimelineRow} className="experience-timeline-row">
+                <div style={styles.timelineSideLabel} className="timeline-side-label">
+                  <div style={styles.timelineLogoContainer} className="timeline-logo-container">
                     <img src={exp.logo} alt={exp.company} style={styles.timelineLogo} />
                   </div>
-                  <span style={styles.experienceCompany} className="font-dopestyle">{exp.company}</span>
+                  <span style={styles.experienceCompany} className="font-dopestyle experience-company-title">{exp.company}</span>
                 </div>
-                <div style={styles.timelineMainContent}>
-                  <h3 style={styles.experienceRole} className="font-peacesans">{exp.role}</h3>
+                <div style={styles.timelineMainContent} className="timeline-main-content">
+                  <h3 style={styles.experienceRole} className="font-peacesans experience-role-title">{exp.role}</h3>
                   <p style={styles.experienceDesc} className="font-midlenorth">{exp.description}</p>
                 </div>
               </div>
@@ -1090,20 +1130,31 @@ function App() {
         </div>
       </section>
 
+      {/* Top Footer Gradient Line Separator */}
+      <div style={{ width: '100%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), rgba(212, 175, 55, 0.5), transparent)' }}></div>
+
       {/* ================= SECTION 8: FINAL UNIFIED FOOTER ================= */}
-      <footer id="contact" className="scene-section" style={{ background: 'transparent', padding: '60px 5vw 100px 5vw' }}>
+      <footer id="contact" className="scene-section" style={{ 
+        background: 'rgba(8, 8, 14, 0.88)', 
+        backdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.7)',
+        padding: '70px 5vw 90px 5vw',
+        position: 'relative',
+        zIndex: 5
+      }}>
         <div style={{ ...styles.container, width: '100%', maxWidth: '1350px', margin: '0 auto' }}>
           
-          {/* Seamless Page-Width Footer Layout (Outer Card Box Removed) */}
+          {/* Seamless Page-Width Footer Layout */}
           <div 
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
               gap: '56px', 
               alignItems: 'stretch',
               width: '100%' 
             }}
-            className="fade-up-element"
+            className="fade-up-element footer-grid-container"
           >
             {/* LEFT COLUMN: Large Media Slideshow */}
             <div 
@@ -1283,6 +1334,7 @@ function App() {
               <video
                 src={activeVideo.videoUrl}
                 style={styles.screenerVideo}
+                preload="auto"
                 autoPlay
                 loop
                 onPlay={() => setIsPlayingMockVideo(true)}

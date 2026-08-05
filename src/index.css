@@ -1433,6 +1433,38 @@ html {
   border-color: rgba(139, 92, 246, 0.3) !important;
 }
 
+/* ================= MOBILE RESPONSIVENESS: PROFESSIONAL PATHWAY & FOOTER ================= */
+@media (max-width: 768px) {
+  .experience-timeline-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+  .timeline-side-label {
+    gap: 16px !important;
+  }
+  .timeline-logo-container {
+    width: 64px !important;
+    height: 64px !important;
+  }
+  .experience-company-title {
+    font-size: 1rem !important;
+    letter-spacing: 1.5px !important;
+  }
+  .experience-role-title {
+    font-size: 1.25rem !important;
+  }
+  .timeline-main-content {
+    border-left: 2px solid var(--accent-violet) !important;
+    padding-left: 1rem !important;
+  }
+  .footer-grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+
 
 
 
