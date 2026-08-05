@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Film, Video, Scissors, Target, Layers, Play, X, ArrowDown, ChevronDown,
+  Film, Video, Scissors, Target, Layers, Play, X, Menu, ArrowDown, ChevronDown,
   ChevronLeft, ChevronRight, PenTool, Cpu, Compass, CheckCircle,
   Briefcase, Mail, FileText, ExternalLink, Sparkles, Camera,
   Clapperboard, Monitor, Image, Info, Send
@@ -14,6 +14,7 @@ function App() {
   const [activeVideo, setActiveVideo] = useState(null);
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
   const [isWorkflowDropdownOpen, setIsWorkflowDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [achievementIndex, setAchievementIndex] = useState(0);
 
   const achievementImages = [
@@ -593,17 +594,30 @@ function App() {
 
       {/* Floating Minimal HUD Navbar */}
       <header style={styles.hudNavbar}>
-        <div style={{ ...styles.hudLogo, cursor: 'pointer' }} onClick={() => scrollTo('landing')}>
+        <div style={{ ...styles.hudLogo, cursor: 'pointer' }} onClick={() => {
+          scrollTo('landing');
+          setIsMobileMenuOpen(false);
+        }}>
           <img src="/Images/logo.png" alt="Eswar Logo" style={{ ...styles.hudLogoImage, cursor: 'pointer' }} />
         </div>
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '38px' }} className="hud-nav-links">
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('editing-room')}>VIDEOS</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('storytelling')}>GALLERY</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('ai-workflow')}>WORKFLOW</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('tools-stack')}>TOOLS</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('experience')}>EXPERIENCE</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('beyond-work')}>VENTURES</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('contact')}>CONTACT</span>
+
+        {/* Mobile Hamburger Toggle Button */}
+        <button 
+          className="hud-mobile-toggle" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Navigation Menu"
+        >
+          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '38px' }} className={`hud-nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('editing-room'); setIsMobileMenuOpen(false); }}>VIDEOS</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('storytelling'); setIsMobileMenuOpen(false); }}>GALLERY</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('ai-workflow'); setIsMobileMenuOpen(false); }}>WORKFLOW</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('tools-stack'); setIsMobileMenuOpen(false); }}>TOOLS</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('experience'); setIsMobileMenuOpen(false); }}>EXPERIENCE</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('beyond-work'); setIsMobileMenuOpen(false); }}>VENTURES</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => { scrollTo('contact'); setIsMobileMenuOpen(false); }}>CONTACT</span>
         </nav>
       </header>
 

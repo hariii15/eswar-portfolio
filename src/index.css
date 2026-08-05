@@ -1433,8 +1433,76 @@ html {
   border-color: rgba(139, 92, 246, 0.3) !important;
 }
 
-/* ================= MOBILE RESPONSIVENESS: PROFESSIONAL PATHWAY & FOOTER ================= */
+/* ================= MOBILE RESPONSIVENESS: NAVBAR HAMBURGER MENU & PATHWAY & FOOTER ================= */
+.hud-mobile-toggle {
+  display: none;
+}
+
+@keyframes mobileMenuFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
+  .hud-mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.25s ease;
+  }
+
+  .hud-mobile-toggle:hover {
+    background: rgba(139, 92, 246, 0.2) !important;
+    border-color: rgba(139, 92, 246, 0.5) !important;
+  }
+
+  .hud-nav-links {
+    display: none !important;
+  }
+
+  .hud-nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 70px !important;
+    right: 5vw !important;
+    left: 5vw !important;
+    background: rgba(10, 10, 16, 0.96) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+    padding: 20px !important;
+    gap: 12px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(139, 92, 246, 0.25) !important;
+    z-index: 1000 !important;
+    animation: mobileMenuFade 0.25s ease forwards;
+  }
+
+  .hud-nav-links.mobile-open .hud-nav-item {
+    font-size: 0.95rem !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-sizing: border-box !important;
+  }
+
   .experience-timeline-row {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
