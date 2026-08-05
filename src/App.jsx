@@ -543,32 +543,18 @@ function App() {
 
       {/* Floating Minimal HUD Navbar */}
       <header style={styles.hudNavbar}>
-        <div style={styles.hudLogo} onClick={() => scrollTo('landing')}>
-          <img src="/Images/logo.png" alt="Eswar Logo" style={styles.hudLogoImage} />
+        <div style={{ ...styles.hudLogo, cursor: 'pointer' }} onClick={() => scrollTo('landing')}>
+          <img src="/Images/logo.png" alt="Eswar Logo" style={{ ...styles.hudLogoImage, cursor: 'pointer' }} />
         </div>
-        <div className="hud-socials">
-          <a href="https://instagram.com/eswaranand_" target="_blank" rel="noopener noreferrer" className="hud-social-link font-dopestyle" title="Instagram">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-            <span className="hud-social-text">eswaranand_</span>
-          </a>
-          <a href="tel:+916369489951" className="hud-social-link font-dopestyle" title="Phone">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span className="hud-social-text">+91 63694 89951</span>
-          </a>
-          <a href="mailto:eswaranand1999@gmail.com" className="hud-social-link font-dopestyle" title="Email">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span className="hud-social-text">eswaranand1999@gmail.com</span>
-          </a>
-        </div>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '22px' }} className="hud-nav-links">
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('editing-room')}>WORK</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('storytelling')}>GALLERY</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('ai-workflow')}>WORKFLOW</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('tools-stack')}>TOOLS</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('experience')}>EXPERIENCE</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('beyond-work')}>BEYOND</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('contact')}>CONTACT</span>
+        </nav>
       </header>
 
       {/* ================= SECTION 1: LANDING ================= */}
@@ -595,7 +581,7 @@ function App() {
               maxWidth: '520px',
               opacity: 0.85
             }}>
-              Editing, design, storytelling, and AI are things I've learning.<br />
+              Editing, design, storytelling, and AI are things I'm learning.<br />
               Cinema is the reason I wanted to learn them in the first place
             </p>
           </div>
@@ -845,8 +831,8 @@ function App() {
                 <div className="case-study-slide">
                   <div className="screenplay-container" style={{ maxHeight: '450px', borderLeft: '3px solid var(--accent-violet)', background: '#0a0a0f', padding: '24px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.7rem', color: 'var(--accent-violet)', marginBottom: '1rem', fontStyle: 'italic', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', fontFamily: 'monospace', letterSpacing: '1px' }}>
-                      <span>Team Pradeep Ranganathan CHALLENGE</span>
-                      <span>AI Artist</span>
+                      <span>For Team Pradeep Ranganathan</span>
+                      <span>AI Artist Challenge</span>
                     </div>
                     <p className="font-recoleta" style={{ fontSize: '1.05rem', color: '#e2e8f0', lineHeight: '1.8', margin: 0 }}>
                       We show a remote, the camera zooms in to the remote. Inside the remote a Pixar style ant bites the wire, looks at the camera and winks. The background is realistic but only the ant should be in the pixar style. Now Pradeep comes and takes the remote and presses a button, a shock hits, he gets into the TV with the remote, he is in a historical battle field. His costume changes according to the historical world with the crown. He runs from the war, fights some people and escapes. Then he presses the next channel button, and now goes to the cartoon world in a stylish 3D animation / anime style. Now Pradeep is in a museum, it's a futuristic gadget museum, some masked men come to steal the gadget, Pradeep stops them. He fights with comical stylish action. Now he presses the turn off button. He comes out to the normal world. At the end we cut back inside the remote and the Pixar style ant winks again.
@@ -857,50 +843,59 @@ function App() {
 
               {activeWorkflowStep === 1 && (
                 <div className="case-study-slide">
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', padding: '10px 0' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '10px 0' }}>
                     
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px' }}>
+                    {/* Steps 1-3 in 3-column Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
                       
                       {/* Step 1 */}
-                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid var(--accent-violet)', background: 'rgba(139, 92, 246, 0.03)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--accent-violet)', background: 'rgba(139, 92, 246, 0.03)', padding: '16px 18px', borderRadius: '0 8px 8px 0' }}>
                         <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-violet)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
                           01 // MUSIC & EMOTIONAL PACING
                         </span>
-                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
                           I usually start with the music because it helps me understand the pace and emotion before I begin creating anything.
                         </p>
                       </div>
 
                       {/* Step 2 */}
-                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 18px', borderRadius: '0 8px 8px 0' }}>
                         <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
                           02 // CHARACTER & SCENE VISUALS
                         </span>
-                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
                           Once the mood is clear, I focus on keeping the characters consistent and generate the visuals needed for each scene.
                         </p>
                       </div>
 
                       {/* Step 3 */}
-                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 18px', borderRadius: '0 8px 8px 0' }}>
                         <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
                           03 // TIMELINE & EDITING FINESSE
                         </span>
-                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
                           After that, I bring everything into the timeline and fine-tune it with transitions, keyframes, speed ramps, and effects until it feels smooth and connected.
                         </p>
                       </div>
 
-                      {/* Step 4 */}
-                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid var(--accent-gold)', background: 'rgba(212, 175, 55, 0.03)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
-                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-gold)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
-                          04 // CREATIVE DIRECTION
-                        </span>
-                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
-                          For me, AI is just a tool. The vision, pacing, and storytelling still come from the creative decisions made throughout the process.
-                        </p>
-                      </div>
+                    </div>
 
+                    {/* Step 4: Long Full-Width Bar Spanning Left to Right */}
+                    <div style={{ 
+                      width: '100%', 
+                      padding: '20px 24px', 
+                      background: 'rgba(139, 92, 246, 0.05)', 
+                      border: '1px solid rgba(212, 175, 55, 0.3)',
+                      borderLeft: '4px solid var(--accent-gold)', 
+                      borderRadius: '8px',
+                      marginTop: '4px'
+                    }}>
+                      <span className="font-dopestyle" style={{ fontSize: '0.78rem', color: 'var(--accent-gold)', display: 'block', marginBottom: '8px', letterSpacing: '2px' }}>
+                        04 // CREATIVE DIRECTION
+                      </span>
+                      <p className="font-recoleta" style={{ fontSize: '1.02rem', color: '#f1f5f9', lineHeight: '1.7', margin: 0, fontStyle: 'italic' }}>
+                        For me, AI is just a tool. The vision, pacing, and storytelling still come from the creative decisions made throughout the process.
+                      </p>
                     </div>
 
                   </div>
@@ -1081,24 +1076,24 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 8: FINAL PLAIN SECTION (SLIDESHOW + LET'S CREATE SOMETHING MEANINGFUL) ================= */}
-      <section id="contact" className="scene-section" style={{ background: 'transparent', padding: '80px 5vw 80px 5vw' }}>
-        <div style={{ ...styles.container, width: '100%' }}>
+      {/* ================= SECTION 8: FINAL UNIFIED FOOTER ================= */}
+      <footer id="contact" className="scene-section" style={{ background: 'transparent', padding: '60px 5vw 100px 5vw' }}>
+        <div style={{ ...styles.container, width: '100%', maxWidth: '1350px', margin: '0 auto' }}>
           
+          {/* Seamless Page-Width Footer Layout (Outer Card Box Removed) */}
           <div 
             style={{ 
-              maxWidth: '1150px', 
-              margin: '0 auto', 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', 
               gap: '56px', 
-              alignItems: 'center' 
-            }} 
+              alignItems: 'stretch',
+              width: '100%' 
+            }}
             className="fade-up-element"
           >
-            {/* LEFT COLUMN: Slideshow */}
+            {/* LEFT COLUMN: Large Media Slideshow */}
             <div 
-              style={{ position: 'relative', width: '100%' }}
+              style={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'center' }}
               onMouseEnter={() => setIsAchievementPaused(true)}
               onMouseLeave={() => setIsAchievementPaused(false)}
             >
@@ -1112,7 +1107,10 @@ function App() {
                   justifyContent: 'center',
                   cursor: 'pointer',
                   overflow: 'hidden',
-                  borderRadius: '12px'
+                  borderRadius: '16px',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  background: '#09090d',
+                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)'
                 }}
                 onClick={() => setActiveGalleryImage({ 
                   src: achievementImages[achievementIndex].src, 
@@ -1129,7 +1127,7 @@ function App() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'contain',
-                    borderRadius: '12px',
+                    borderRadius: '16px',
                     transition: 'opacity 0.4s ease, transform 0.4s ease'
                   }}
                   className="role-text-fade"
@@ -1137,27 +1135,107 @@ function App() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Let's Create Something Meaningful */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
-              <h2 style={{ ...styles.finalHeading, textAlign: 'left', margin: 0 }} className="font-peacesans">
-                LET'S CREATE SOMETHING MEANINGFUL
-              </h2>
+            {/* RIGHT COLUMN: Title + Text + 3 Contact Button Pills */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '28px', textAlign: 'left' }}>
               
-              <p style={{ ...styles.finalText, textAlign: 'left', margin: 0 }} className="font-midlenorth">
-                Cinema is something I'm genuinely passionate about, and I'd love to be part of a team that shares the same passion. I'm looking forward to contributing, learning, and growing with every project that comes my way. I know there's still so much for me to learn, and that's exactly what excites me about this journey. I hope we get the chance to learn, grow, and make great cinema together.
-              </p>
-
-              <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
-                <button className="btn-primary" style={{ ...styles.finalBtn, borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }} onClick={() => setShowContactModal(true)}>
-                  <Mail size={16} style={{ marginRight: 8 }} />
-                  GET IN TOUCH
-                </button>
+              {/* Upper Text Area */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                <h2 style={{ ...styles.finalHeading, textAlign: 'left', margin: 0, fontSize: '2.1rem' }} className="font-peacesans">
+                  LET'S CREATE SOMETHING MEANINGFUL
+                </h2>
+                
+                <p style={{ ...styles.finalText, textAlign: 'left', margin: 0, fontSize: '1.08rem', lineHeight: '1.7', opacity: 0.9 }} className="font-midlenorth">
+                  Cinema is something I'm genuinely passionate about, and I'd love to be part of a team that shares the same passion. I'm looking forward to contributing, learning, and growing with every project that comes my way. I know there's still so much for me to learn, and that's exactly what excites me about this journey. I hope we get the chance to learn, grow, and make great cinema together.
+                </p>
               </div>
-            </div>
 
+              {/* Bottom Row: 3 Pill Buttons Side-by-Side */}
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center', paddingTop: '10px' }}>
+                
+                {/* Pill 1: Email */}
+                <a 
+                  href="mailto:eswaranand1999@gmail.com" 
+                  className="font-dopestyle" 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '10px', 
+                    padding: '12px 22px', 
+                    background: 'rgba(255, 255, 255, 0.05)', 
+                    border: '1px solid rgba(255, 255, 255, 0.18)', 
+                    borderRadius: '30px', 
+                    color: '#ffffff', 
+                    textDecoration: 'none', 
+                    fontSize: '0.88rem',
+                    letterSpacing: '0.8px',
+                    transition: 'all 0.25s ease'
+                  }}
+                >
+                  <Mail size={16} style={{ color: 'var(--accent-violet)' }} />
+                  eswaranand1999@gmail.com
+                </a>
+
+                {/* Pill 2: Phone */}
+                <a 
+                  href="tel:+916369489951" 
+                  className="font-dopestyle" 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '10px', 
+                    padding: '12px 22px', 
+                    background: 'rgba(255, 255, 255, 0.05)', 
+                    border: '1px solid rgba(255, 255, 255, 0.18)', 
+                    borderRadius: '30px', 
+                    color: '#ffffff', 
+                    textDecoration: 'none', 
+                    fontSize: '0.88rem',
+                    letterSpacing: '0.8px',
+                    transition: 'all 0.25s ease'
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-violet)' }}>
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  +91 63694 89951
+                </a>
+
+                {/* Pill 3: Instagram */}
+                <a 
+                  href="https://instagram.com/eswaranand_" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="font-dopestyle" 
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '10px', 
+                    padding: '12px 22px', 
+                    background: 'rgba(255, 255, 255, 0.05)', 
+                    border: '1px solid rgba(255, 255, 255, 0.18)', 
+                    borderRadius: '30px', 
+                    color: '#ffffff', 
+                    textDecoration: 'none', 
+                    fontSize: '0.88rem',
+                    letterSpacing: '0.8px',
+                    transition: 'all 0.25s ease'
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#e1306c' }}>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  eswaranand_
+                </a>
+
+              </div>
+
+            </div>
           </div>
+
         </div>
-      </section>
+      </footer>
 
       {/* ================= MODAL: GRAPHIC GALLERY LIGHTBOX ================= */}
       {activeGalleryImage && (
