@@ -5,7 +5,7 @@ import {
   Briefcase, Mail, FileText, ExternalLink, Sparkles, Camera,
   Clapperboard, Monitor, Image, Info, Send
 } from 'lucide-react';
-import Aurora from './Aurora';
+import GradientWaves from './GradientWaves';
 import LineSidebar from './LineSidebar';
 
 function App() {
@@ -526,16 +526,30 @@ function App() {
   return (
     <div style={{ backgroundColor: 'var(--bg-deep)', position: 'relative' }}>
 
-      {/* Global Fixed Live Blurred Glowing Violet Aura & Aurora Background */}
+      {/* Global Fixed Live Gradient Waves Background */}
       <div style={styles.darkVeilBackground} className="global-live-bg">
-        <Aurora
-          colorStops={["#7C3AED", "#4d1680", "#5505ab"]}
-          blend={0.6}
-          amplitude={1.2}
-          speed={0.6}
+        <GradientWaves
+          horizonColor="#5227FF"
+          waveColor="#FF9FFC"
+          crestColor="#FFFFFF"
+          speed={0.4}
+          amplitude={2.5}
+          waveScale={0.6}
+          waveRatio={0.9}
+          swell={35}
+          turbulence={20}
+          tilt={1.11}
+          zoom={1}
+          height={5.5}
+          fogDepth={15}
+          detail="medium"
+          brightness={1}
+          opacity={1}
+          mouseInteraction
+          parallaxStrength={0.5}
+          grain
+          grainIntensity={0.05}
         />
-        <div className="live-blob live-blob-1"></div>
-        <div className="live-blob live-blob-2"></div>
       </div>
 
       {/* Cinematic Moving Spotlight Light Beam */}
