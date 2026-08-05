@@ -217,7 +217,7 @@ function App() {
       tagline: "Post-Production & Cutting",
       tools: [
         { name: "Premiere Pro", sub: "NLE & Timeline Mastering", logo: "/logos/pr.png" },
-        { name: "CapCut", sub: "Short-Form Pacing & FX", logo: "/logos/capcut.png", darkBg: false }
+        { name: "CapCut", sub: "Short-Form Pacing & FX", logo: "/logos/capcut.png", darkBg: false, rounded: true }
       ]
     },
     {
@@ -285,14 +285,16 @@ function App() {
       role: "Creative Partner • Video Editor • Brand Designer",
       logo: "/Images/b1.png",
       desc: "Helping simplify technical concepts through thoughtful editing, visual storytelling, branding, and content design that makes learning engaging and accessible.",
-      platform: "youtube"
+      platform: "youtube",
+      url: "https://youtube.com/@programprofessor?si=vdMzaDcvTqxYrAIE"
     },
     {
       title: "Instagram Content Studio",
       role: "AI Creator • Video Editor • Content Designer",
       logo: "/Images/b2.png",
       desc: "Creating AI-assisted short-form videos, graphics, and social-first content that transforms ideas into engaging visual experiences for modern audiences.",
-      platform: "instagram"
+      platform: "instagram",
+      url: "https://www.instagram.com/eswars.mixchar?igsh=MXY1d29vZGJkZnp2bQ=="
     }
   ];
 
@@ -765,10 +767,33 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 2B: VIDEO (AI WORKFLOW CASE STUDY) ================= */}
+      {/* ================= SECTION 3: IMAGES (ART GALLERY) ================= */}
+      <section id="storytelling" className="scene-section">
+        <div style={styles.container}>
+          <div style={styles.textCenter} className="fade-up-element">
+            <h2 style={styles.sectionHeading} className="font-peacesans">ART GALLERY</h2>
+          </div>
+
+          <div style={styles.imageGridContainer} className="fade-up-element image-grid-container">
+            <div style={styles.row1} className="image-grid-row1">
+              <img src="/Images/1.jpg" alt="Scene 3 - Frame 1" style={styles.row1Image} className="img-frame-1" />
+              <img src="/Images/2.jpg" alt="Scene 3 - Frame 2" style={styles.row1Image} className="img-frame-2" />
+              <img src="/Images/3.jpg" alt="Scene 3 - Frame 3" style={styles.row1Image} className="img-frame-3" />
+              <img src="/Images/4.jpg" alt="Scene 3 - Frame 4" style={styles.row1Image} className="img-frame-4" />
+              <img src="/Images/5.jpg" alt="Scene 3 - Frame 5" style={styles.row1Image} className="img-frame-5" />
+            </div>
+            <div style={styles.row2} className="image-grid-row2">
+              <img src="/Images/6.jpg" alt="Scene 3 - Frame 6" style={styles.row2Image} className="img-frame-6" />
+              <img src="/Images/7.jpg" alt="Scene 3 - Frame 7" style={styles.row2Image} className="img-frame-7" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SECTION 4: VIDEO (AI WORKFLOW CASE STUDY) ================= */}
       <section id="ai-workflow" className="scene-section" style={{ background: 'transparent', minHeight: '80vh', padding: '80px 5vw 60px 5vw', display: 'flex', flexDirection: 'column' }}>
         <div style={{ ...styles.container, width: '100%', display: 'flex', flexDirection: 'column' }}>
-
+          
           {/* Header with Title & Winner Badge */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginBottom: '28px', gap: '20px', flexWrap: 'wrap' }}>
             <h2 style={{ ...styles.sectionHeading, margin: 0 }} className="font-peacesans">AI WORKFLOW</h2>
@@ -781,7 +806,7 @@ function App() {
 
           {/* 2-Column Split: Left Sidebar Nav + Right Content Area (Cardless Layout) */}
           <div className="case-study-grid-container" style={{ ...styles.caseStudyGrid, width: '100%' }}>
-
+            
             {/* LEFT SIDEBAR NAVIGATION */}
             <div className="case-study-sidebar-col" style={{ borderRight: '1px solid rgba(255, 255, 255, 0.1)', paddingRight: '20px' }}>
               <LineSidebar
@@ -808,7 +833,7 @@ function App() {
 
             {/* RIGHT CONTENT COLUMN */}
             <div className="case-study-content-col" style={{ flex: 1, paddingLeft: '10px' }}>
-
+              
               {/* Active Step Heading */}
               <div style={{ marginBottom: '20px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '12px' }}>
                 <h3 style={{ ...styles.slideTitle, margin: 0 }} className="font-peacesans">
@@ -818,23 +843,14 @@ function App() {
 
               {activeWorkflowStep === 0 && (
                 <div className="case-study-slide">
-                  <div className="screenplay-container" style={{ maxHeight: '450px', borderLeft: '3px solid var(--accent-violet)', background: '#0a0a0f' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.65rem', color: '#8e8e9f', marginBottom: '1rem', fontStyle: 'italic', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', fontFamily: 'monospace' }}>
-                      <span>ORIGINAL SCRIPT BREAKDOWN</span>
-                      <span style={{ color: 'var(--accent-violet)' }}>GENRE: SCI-FI COMEDY / ANIME HYBRID</span>
+                  <div className="screenplay-container" style={{ maxHeight: '450px', borderLeft: '3px solid var(--accent-violet)', background: '#0a0a0f', padding: '24px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.7rem', color: 'var(--accent-violet)', marginBottom: '1rem', fontStyle: 'italic', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', fontFamily: 'monospace', letterSpacing: '1px' }}>
+                      <span>CONCEPT & CHALLENGE BRIEF</span>
+                      <span>GENRE: SCI-FI COMEDY / ANIME HYBRID</span>
                     </div>
-                    <div className="screenplay-slugline">INT. NORMAL WORLD - DAY</div>
-                    <div className="screenplay-action">We show a remote, the camera zooms in to the remote. Inside the remote a Pixar style ant bites the wire, looks at the camera and winks. The background is realistic but only the ant should be in the pixar style.</div>
-                    <div className="screenplay-slugline">INT. LIVING ROOM - DAY</div>
-                    <div className="screenplay-action">Now Pradeep comes and takes the remote and presses a button, a shock hits, he gets into the TV with the remote.</div>
-                    <div className="screenplay-slugline">EXT. HISTORICAL BATTLEFIELD - DAY (TV WORLD)</div>
-                    <div className="screenplay-action">He is in a historical battle field. His costume changes according to the historical world with the crown. He runs from the war, fights some people and escapes. Then he presses the next channel button.</div>
-                    <div className="screenplay-slugline">EXT. CARTOON WORLD - NIGHT (TV WORLD)</div>
-                    <div className="screenplay-action">Now goes to the cartoon world in a stylish 3D animation / anime style.</div>
-                    <div className="screenplay-slugline">INT. FUTURISTIC GADGET MUSEUM - NIGHT (TV WORLD)</div>
-                    <div className="screenplay-action">Now Pradeep is in a museum, it's a futuristic gadget museum, some masked men come to steal the gadget, Pradeep stops them. He fights with comical stylish action. Now he presses the turn off button.</div>
-                    <div className="screenplay-slugline">INT. LIVING ROOM - DAY</div>
-                    <div className="screenplay-action">He comes out to the normal world. At the end we cut back inside the remote and the Pixar style ant winks again.</div>
+                    <p className="font-recoleta" style={{ fontSize: '1.05rem', color: '#e2e8f0', lineHeight: '1.8', margin: 0 }}>
+                      We show a remote, the camera zooms in to the remote. Inside the remote a Pixar style ant bites the wire, looks at the camera and winks. The background is realistic but only the ant should be in the pixar style. Now Pradeep comes and takes the remote and presses a button, a shock hits, he gets into the TV with the remote, he is in a historical battle field. His costume changes according to the historical world with the crown. He runs from the war, fights some people and escapes. Then he presses the next channel button, and now goes to the cartoon world in a stylish 3D animation / anime style. Now Pradeep is in a museum, it's a futuristic gadget museum, some masked men come to steal the gadget, Pradeep stops them. He fights with comical stylish action. Now he presses the turn off button. He comes out to the normal world. At the end we cut back inside the remote and the Pixar style ant winks again.
+                    </p>
                   </div>
                 </div>
               )}
@@ -842,7 +858,7 @@ function App() {
               {activeWorkflowStep === 1 && (
                 <div className="case-study-slide">
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '10px 0' }}>
-
+                    
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px' }}>
                       <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--accent-violet)' }}>
                         <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-violet)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
@@ -907,14 +923,14 @@ function App() {
                 <div className="case-study-slide">
                   <div className="cinematic-screener-wrapper" style={{ border: '1px solid rgba(139, 92, 246, 0.35)', boxShadow: '0 15px 40px rgba(0,0,0,0.8), 0 0 30px rgba(139, 92, 246, 0.15)', borderRadius: '4px', overflow: 'hidden' }}>
                     <div className="screener-video-container" style={{ aspectRatio: '16/9', background: '#000' }}>
-                      <video
-                        src="/Workflow/Output.mp4"
-                        className="screener-video-element"
+                      <video 
+                        src="/Workflow/Output.mp4" 
+                        className="screener-video-element" 
                         autoPlay
                         loop
                         muted
                         playsInline
-                        controls
+                        controls 
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     </div>
@@ -927,30 +943,7 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 3: IMAGES (ART GALLERY) ================= */}
-      <section id="storytelling" className="scene-section">
-        <div style={styles.container}>
-          <div style={styles.textCenter} className="fade-up-element">
-            <h2 style={styles.sectionHeading} className="font-peacesans">ART GALLERY</h2>
-          </div>
-
-          <div style={styles.imageGridContainer} className="fade-up-element image-grid-container">
-            <div style={styles.row1} className="image-grid-row1">
-              <img src="/Images/1.jpg" alt="Scene 3 - Frame 1" style={styles.row1Image} className="img-frame-1" />
-              <img src="/Images/2.jpg" alt="Scene 3 - Frame 2" style={styles.row1Image} className="img-frame-2" />
-              <img src="/Images/3.jpg" alt="Scene 3 - Frame 3" style={styles.row1Image} className="img-frame-3" />
-              <img src="/Images/4.jpg" alt="Scene 3 - Frame 4" style={styles.row1Image} className="img-frame-4" />
-              <img src="/Images/5.jpg" alt="Scene 3 - Frame 5" style={styles.row1Image} className="img-frame-5" />
-            </div>
-            <div style={styles.row2} className="image-grid-row2">
-              <img src="/Images/6.jpg" alt="Scene 3 - Frame 6" style={styles.row2Image} className="img-frame-6" />
-              <img src="/Images/7.jpg" alt="Scene 3 - Frame 7" style={styles.row2Image} className="img-frame-7" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= SECTION 4: TOOLS (TOOLS I USE) ================= */}
+      {/* ================= SECTION 5: TOOLS (TOOLS I USE) ================= */}
       <section id="tools-stack" className="scene-section" style={{ background: 'transparent' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
@@ -969,10 +962,11 @@ function App() {
                   {cat.tools.map((tool, tIdx) => (
                     <div key={tIdx} className="tool-clean-item">
                       <div className="tool-logo-large-wrap">
-                        <img
-                          src={tool.logo}
-                          alt={tool.name}
-                          className={`tool-logo-large ${tool.darkBg ? 'dark-logo-invert' : ''}`}
+                        <img 
+                          src={tool.logo} 
+                          alt={tool.name} 
+                          className={`tool-logo-large ${tool.darkBg ? 'dark-logo-invert' : ''}`} 
+                          style={tool.rounded ? { borderRadius: '12px', overflow: 'hidden' } : {}}
                         />
                       </div>
                       <div className="tool-clean-meta">
@@ -988,7 +982,7 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 5: EXPERIENCE (PROFESSIONAL PATHWAY) ================= */}
+      {/* ================= SECTION 6: EXPERIENCE (PROFESSIONAL PATHWAY) ================= */}
       <section id="experience" className="scene-section" style={{ background: 'transparent' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
@@ -1014,7 +1008,7 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 6: BEYOND WORK ================= */}
+      {/* ================= SECTION 7: BEYOND WORK ================= */}
       <section id="beyond-work" className="scene-section">
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
@@ -1024,26 +1018,61 @@ function App() {
           <div style={styles.beyondWorkGrid} className="fade-up-element">
             {beyondWorkProjects.map((proj, idx) => (
               <div key={idx} style={styles.beyondWorkCard} className="beyond-work-card">
-                <div style={styles.beyondWorkThumbContainer} className="beyond-work-thumb-container">
-                  <img src={proj.logo} alt={proj.title} style={styles.beyondWorkThumb} />
-                  <div style={styles.platformIconOverlay}>
-                    {proj.platform === 'youtube' ? (
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ color: '#ff0000' }}>
-                        <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11C4.483 20.455 12 20.455 12 20.455s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                      </svg>
-                    ) : (
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#e1306c' }}>
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    )}
+                <a 
+                  href={proj.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div style={styles.beyondWorkThumbContainer} className="beyond-work-thumb-container">
+                    <img src={proj.logo} alt={proj.title} style={styles.beyondWorkThumb} />
+                    <div style={styles.platformIconOverlay}>
+                      {proj.platform === 'youtube' ? (
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ color: '#ff0000' }}>
+                          <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11C4.483 20.455 12 20.455 12 20.455s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#e1306c' }}>
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </a>
                 <div style={styles.beyondWorkMeta}>
-                  <h3 style={styles.beyondWorkCardTitle} className="font-peacesans">{proj.title}</h3>
+                  <h3 style={styles.beyondWorkCardTitle} className="font-peacesans">
+                    <a href={proj.url} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {proj.title}
+                    </a>
+                  </h3>
                   <span style={styles.beyondWorkCardRole} className="font-dopestyle">{proj.role}</span>
                   <p style={styles.beyondWorkCardDesc}>{proj.desc}</p>
+                  
+                  <a 
+                    href={proj.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-primary font-dopestyle" 
+                    style={{ 
+                      display: 'inline-flex', 
+                      alignItems: 'center', 
+                      gap: '8px', 
+                      marginTop: '16px', 
+                      padding: '8px 18px', 
+                      fontSize: '0.8rem', 
+                      letterSpacing: '1px', 
+                      textDecoration: 'none', 
+                      borderColor: 'rgba(255, 255, 255, 0.25)', 
+                      color: '#ffffff',
+                      borderRadius: '6px',
+                      width: 'fit-content'
+                    }}
+                  >
+                    <ExternalLink size={14} />
+                    OPEN CHANNEL
+                  </a>
                 </div>
               </div>
             ))}
@@ -1052,32 +1081,28 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 7: ACHIEVEMENTS ================= */}
-      <section id="achievements" className="scene-section" style={{ background: 'transparent', padding: '80px 5vw 60px 5vw' }}>
+      {/* ================= SECTION 8: FINAL PLAIN SECTION (SLIDESHOW + LET'S CREATE SOMETHING MEANINGFUL) ================= */}
+      <section id="contact" className="scene-section" style={{ background: 'transparent', padding: '80px 5vw 80px 5vw' }}>
         <div style={{ ...styles.container, width: '100%' }}>
-          <div style={styles.textCenter} className="fade-up-element">
-            <h2 style={styles.sectionHeading} className="font-peacesans">ACHIEVEMENTS</h2>
-          </div>
-
-          {/* 2-Column Split: Cardless Slideshow on Left + Quote Text on Right */}
-          <div
-            style={{
-              maxWidth: '1100px',
-              margin: '0 auto',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
-              alignItems: 'center'
-            }}
+          
+          <div 
+            style={{ 
+              maxWidth: '1150px', 
+              margin: '0 auto', 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+              gap: '56px', 
+              alignItems: 'center' 
+            }} 
             className="fade-up-element"
           >
-            {/* LEFT COLUMN: Outer Card-less Slideshow */}
-            <div
+            {/* LEFT COLUMN: Slideshow */}
+            <div 
               style={{ position: 'relative', width: '100%' }}
               onMouseEnter={() => setIsAchievementPaused(true)}
               onMouseLeave={() => setIsAchievementPaused(false)}
             >
-              <div
+              <div 
                 style={{
                   position: 'relative',
                   width: '100%',
@@ -1089,16 +1114,16 @@ function App() {
                   overflow: 'hidden',
                   borderRadius: '12px'
                 }}
-                onClick={() => setActiveGalleryImage({
-                  src: achievementImages[achievementIndex].src,
+                onClick={() => setActiveGalleryImage({ 
+                  src: achievementImages[achievementIndex].src, 
                   title: achievementImages[achievementIndex].title,
-                  category: 'ACHIEVEMENTS'
+                  category: 'PORTFOLIO' 
                 })}
               >
-                <img
+                <img 
                   key={achievementIndex}
-                  src={achievementImages[achievementIndex].src}
-                  alt={`Achievement ${achievementIndex + 1}`}
+                  src={achievementImages[achievementIndex].src} 
+                  alt={`Slide ${achievementIndex + 1}`}
                   loading="lazy"
                   style={{
                     width: '100%',
@@ -1112,58 +1137,27 @@ function App() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Inspiring Quote Section */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingLeft: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ width: '32px', height: '2px', background: 'var(--accent-violet)' }}></span>
-                <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-violet)', letterSpacing: '2px' }}>
-                  JOURNEY & MILESTONES
-                </span>
-              </div>
-
-              <h3
-                className="font-peacesans"
-                style={{
-                  color: '#ffffff',
-                  fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)',
-                  lineHeight: '1.3',
-                  margin: 0,
-                  letterSpacing: '0.5px',
-                  textTransform: 'uppercase'
-                }}
-              >
-                "LITTLE STEPS EVERYDAY LEAD TO BIG WIN ONE DAY"
-              </h3>
-
-              <p className="font-recoleta" style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
-                Every keyframe, storyboard design, and continuous learning iteration moves the craft forward.
+            {/* RIGHT COLUMN: Let's Create Something Meaningful */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
+              <h2 style={{ ...styles.finalHeading, textAlign: 'left', margin: 0 }} className="font-peacesans">
+                LET'S CREATE SOMETHING MEANINGFUL
+              </h2>
+              
+              <p style={{ ...styles.finalText, textAlign: 'left', margin: 0 }} className="font-midlenorth">
+                I enjoy building stories with people who care about them. Whether it's planning a sequence, refining an edit, experimenting with AI, or solving creative challenges, I bring curiosity, ownership, and a constant desire to improve. If my way of thinking resonates with your team, I'd love the opportunity to help bring your next story to life.
               </p>
+
+              <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
+                <button className="btn-primary" style={{ ...styles.finalBtn, borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }} onClick={() => setShowContactModal(true)}>
+                  <Mail size={16} style={{ marginRight: 8 }} />
+                  GET IN TOUCH
+                </button>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
-
-
-
-      {/* ================= FOOTER: FINAL SECTION ================= */}
-      <footer id="contact" className="scene-section" style={styles.finalSection}>
-        <div style={styles.finalContainer}>
-          <h2 style={styles.finalHeading} className="fade-up-element font-peacesans">LET'S CREATE SOMETHING MEANINGFUL</h2>
-
-          <p style={styles.finalText} className="fade-up-element font-midlenorth">
-            I enjoy building stories with people who care about them. Whether it's planning a sequence, refining an edit, experimenting with AI, or solving creative challenges, I bring curiosity, ownership, and a constant desire to improve. If my way of thinking resonates with your team, I'd love the opportunity to help bring your next story to life.
-          </p>
-
-          <div style={styles.finalCtaGroup} className="fade-up-element">
-
-            <button className="btn-primary" style={{ ...styles.finalBtn, borderColor: 'var(--accent-gold)', color: 'var(--accent-gold)' }} onClick={() => setShowContactModal(true)}>
-              <Mail size={16} style={{ marginRight: 8 }} />
-              GET IN TOUCH
-            </button>
-          </div>
-        </div>
-      </footer>
 
       {/* ================= MODAL: GRAPHIC GALLERY LIGHTBOX ================= */}
       {activeGalleryImage && (
@@ -1877,7 +1871,7 @@ const styles = {
   // SECTION 7: TIMELINE / EXPERIENCE
   timelineWrapper: {
     width: '100%',
-    maxWidth: '800px',
+    maxWidth: '960px',
     margin: '0 auto',
     position: 'relative',
     textAlign: 'left',
@@ -1892,11 +1886,11 @@ const styles = {
   timelineSideLabel: {
     display: 'flex',
     alignItems: 'center',
-    gap: '20px',
+    gap: '24px',
   },
   timelineLogoContainer: {
-    width: '84px',
-    height: '84px',
+    width: '110px',
+    height: '110px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -1908,24 +1902,24 @@ const styles = {
     objectFit: 'contain',
   },
   experienceCompany: {
-    fontSize: '1rem',
+    fontSize: '1.25rem',
     fontFamily: 'var(--font-cinematic)',
     color: 'var(--accent-gold)',
-    letterSpacing: '2px',
+    letterSpacing: '2.5px',
   },
   timelineMainContent: {
     borderLeft: '1px solid var(--border-muted)',
     paddingLeft: '2.5rem',
   },
   experienceRole: {
-    fontSize: '1.25rem',
+    fontSize: '1.55rem',
     color: '#fff',
-    marginBottom: '10px',
+    marginBottom: '12px',
   },
   experienceDesc: {
-    fontSize: '0.95rem',
+    fontSize: '1.1rem',
     color: 'var(--text-muted)',
-    lineHeight: '1.6',
+    lineHeight: '1.65',
     fontStyle: 'italic',
   },
 
