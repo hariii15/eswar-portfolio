@@ -546,13 +546,13 @@ function App() {
         <div style={{ ...styles.hudLogo, cursor: 'pointer' }} onClick={() => scrollTo('landing')}>
           <img src="/Images/logo.png" alt="Eswar Logo" style={{ ...styles.hudLogoImage, cursor: 'pointer' }} />
         </div>
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '22px' }} className="hud-nav-links">
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('editing-room')}>WORK</span>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '38px' }} className="hud-nav-links">
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('editing-room')}>VIDEOS</span>
           <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('storytelling')}>GALLERY</span>
           <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('ai-workflow')}>WORKFLOW</span>
           <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('tools-stack')}>TOOLS</span>
           <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('experience')}>EXPERIENCE</span>
-          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('beyond-work')}>BEYOND</span>
+          <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('beyond-work')}>VENTURES</span>
           <span className="hud-nav-item font-dopestyle" style={{ cursor: 'pointer' }} onClick={() => scrollTo('contact')}>CONTACT</span>
         </nav>
       </header>
@@ -575,11 +575,11 @@ function App() {
             {/* Muted Bio Subtitle */}
             <p className="font-recoleta" style={{
               color: 'var(--text-muted)',
-              fontSize: '0.95rem',
-              lineHeight: '1.6',
-              marginTop: '20px',
-              maxWidth: '520px',
-              opacity: 0.85
+              fontSize: '1.18rem',
+              lineHeight: '1.7',
+              marginTop: '22px',
+              maxWidth: '600px',
+              opacity: 0.9
             }}>
               Editing, design, storytelling, and AI are things I'm learning.<br />
               Cinema is the reason I wanted to learn them in the first place
@@ -1107,7 +1107,7 @@ function App() {
                   justifyContent: 'center',
                   cursor: 'pointer',
                   overflow: 'hidden',
-                  borderRadius: '16px',
+                  borderRadius: '0px',
                   border: '1px solid rgba(255, 255, 255, 0.12)',
                   background: '#09090d',
                   boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)'
@@ -1127,7 +1127,7 @@ function App() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'contain',
-                    borderRadius: '16px',
+                    borderRadius: '0px',
                     transition: 'opacity 0.4s ease, transform 0.4s ease'
                   }}
                   className="role-text-fade"
@@ -1149,10 +1149,10 @@ function App() {
                 </p>
               </div>
 
-              {/* Bottom Row: 3 Pill Buttons Side-by-Side */}
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center', paddingTop: '10px' }}>
+              {/* Bottom Row: Minimal Contact Links */}
+              <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap', alignItems: 'center', paddingTop: '10px' }}>
                 
-                {/* Pill 1: Email */}
+                {/* Contact 1: Email */}
                 <a 
                   href="mailto:eswaranand1999@gmail.com" 
                   className="font-dopestyle" 
@@ -1160,22 +1160,19 @@ function App() {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '10px', 
-                    padding: '12px 22px', 
-                    background: 'rgba(255, 255, 255, 0.05)', 
-                    border: '1px solid rgba(255, 255, 255, 0.18)', 
-                    borderRadius: '30px', 
-                    color: '#ffffff', 
+                    color: '#e2e8f0', 
                     textDecoration: 'none', 
-                    fontSize: '0.88rem',
+                    fontSize: '0.9rem',
                     letterSpacing: '0.8px',
-                    transition: 'all 0.25s ease'
+                    transition: 'all 0.25s ease',
+                    cursor: 'pointer'
                   }}
                 >
-                  <Mail size={16} style={{ color: 'var(--accent-violet)' }} />
+                  <Mail size={18} style={{ color: 'var(--accent-violet)' }} />
                   eswaranand1999@gmail.com
                 </a>
 
-                {/* Pill 2: Phone */}
+                {/* Contact 2: Phone */}
                 <a 
                   href="tel:+916369489951" 
                   className="font-dopestyle" 
@@ -1183,24 +1180,21 @@ function App() {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '10px', 
-                    padding: '12px 22px', 
-                    background: 'rgba(255, 255, 255, 0.05)', 
-                    border: '1px solid rgba(255, 255, 255, 0.18)', 
-                    borderRadius: '30px', 
-                    color: '#ffffff', 
+                    color: '#e2e8f0', 
                     textDecoration: 'none', 
-                    fontSize: '0.88rem',
+                    fontSize: '0.9rem',
                     letterSpacing: '0.8px',
-                    transition: 'all 0.25s ease'
+                    transition: 'all 0.25s ease',
+                    cursor: 'pointer'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-violet)' }}>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--accent-violet)' }}>
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                   +91 63694 89951
                 </a>
 
-                {/* Pill 3: Instagram */}
+                {/* Contact 3: Instagram */}
                 <a 
                   href="https://instagram.com/eswaranand_" 
                   target="_blank" 
@@ -1210,18 +1204,15 @@ function App() {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '10px', 
-                    padding: '12px 22px', 
-                    background: 'rgba(255, 255, 255, 0.05)', 
-                    border: '1px solid rgba(255, 255, 255, 0.18)', 
-                    borderRadius: '30px', 
-                    color: '#ffffff', 
+                    color: '#e2e8f0', 
                     textDecoration: 'none', 
-                    fontSize: '0.88rem',
+                    fontSize: '0.9rem',
                     letterSpacing: '0.8px',
-                    transition: 'all 0.25s ease'
+                    transition: 'all 0.25s ease',
+                    cursor: 'pointer'
                   }}
                 >
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#e1306c' }}>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#e1306c' }}>
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
