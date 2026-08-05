@@ -216,48 +216,48 @@ function App() {
       category: "Video Editing",
       tagline: "Post-Production & Cutting",
       tools: [
-        { name: "Premiere Pro", sub: "NLE & Timeline Mastering", logo: "/logos/pr.png" },
-        { name: "CapCut", sub: "Short-Form Pacing & FX", logo: "/logos/capcut.png", darkBg: false, rounded: true }
+        { name: "Premiere Pro", sub: "Edit • Pace • Polish", logo: "/logos/pr.png" },
+        { name: "CapCut", sub: "Shorts • Engage • Accelerate", logo: "/logos/capcut.png", darkBg: false, rounded: true }
       ]
     },
     {
       category: "Graphic Designing",
       tagline: "Visual Art & Keyframes",
       tools: [
-        { name: "Photoshop", sub: "Compositing & Post Design", logo: "/logos/ps.png" },
-        { name: "Canva", sub: "Brand Layouts & Assets", logo: "/logos/canva.png" }
+        { name: "Photoshop", sub: "Design • Composite • Transform", logo: "/logos/ps.png" },
+        { name: "Canva", sub: "Brand • Layout • Publish", logo: "/logos/canva.png" }
       ]
     },
     {
       category: "Task Management",
       tagline: "Workspace & Project Sprints",
       tools: [
-        { name: "Notion", sub: "Script DB & Narrative Hub", logo: "/logos/notion.svg", darkBg: true },
-        { name: "Linear", sub: "Production Pipeline & Queue", logo: "/logos/linearr.png", darkBg: false }
+        { name: "Notion", sub: "Plan • Organize • Document", logo: "/logos/notion.svg", darkBg: true },
+        { name: "Linear", sub: "Track • Prioritize • Deliver", logo: "/logos/linearr.png", darkBg: false }
       ]
     },
     {
       category: "AI Tools",
       tagline: "LLMs & Creative Intelligence",
       tools: [
-        { name: "ChatGPT", sub: "Prompt Crafting & Ideas", logo: "/logos/gpt.png", darkBg: true },
-        { name: "Claude AI", sub: "Scripting & Creative Logic", logo: "/logos/claude logo.svg" }
+        { name: "ChatGPT", sub: "Research • Brainstorm • Explore", logo: "/logos/gpt.png", darkBg: true },
+        { name: "Claude AI", sub: "Think • Structure • Reason", logo: "/logos/claude logo.svg" }
       ]
     },
     {
       category: "AI Creation",
       tagline: "Generative Engines & Synthesis",
       tools: [
-        { name: "Google Flow", sub: "Workflow & Node Pipelines", logo: "/logos/flow.webp" },
-        { name: "Kling AI", sub: "Motion Dynamics Engine", logo: "/logos/kling.png" }
+        { name: "Google Flow", sub: "Visualize • Generate • Direct", logo: "/logos/flow.webp" },
+        { name: "Kling AI", sub: "Stylize • Simulate • Evolve", logo: "/logos/kling.png" }
       ]
     },
     {
       category: "AI Driven Motion Graphics",
       tagline: "Programmatic HUDs & Pre-vis",
       tools: [
-        { name: "HyperFrames", sub: "Pre-visualized HUDs & Motion", logo: "/logos/hyperframes.png" },
-        { name: "Remotion", sub: "Programmatic Video Synthesis", logo: "/logos/remotion.png" }
+        { name: "HyperFrames", sub: "Motion • Enhance • Elevate", logo: "/logos/hyperframes.png" },
+        { name: "Remotion", sub: "Compose • Automate • Render", logo: "/logos/remotion.png" }
       ]
     }
   ];
@@ -281,18 +281,18 @@ function App() {
   // Beyond Work Projects Data
   const beyondWorkProjects = [
     {
-      title: "Technical YouTube Channel",
-      role: "Creative Partner • Video Editor • Brand Designer",
+      title: "Program Professor",
+      role: "Shooting • Editing • Branding • Visual Identity",
       logo: "/Images/b1.png",
-      desc: "Helping simplify technical concepts through thoughtful editing, visual storytelling, branding, and content design that makes learning engaging and accessible.",
+      desc: "An educational platform simplifying technical concepts, where I handled shooting, editing, branding, and visual identity.",
       platform: "youtube",
       url: "https://youtube.com/@programprofessor?si=vdMzaDcvTqxYrAIE"
     },
     {
-      title: "Instagram Content Studio",
-      role: "AI Creator • Video Editor • Content Designer",
+      title: "Mixchar",
+      role: "Film Edits • Visual Storytelling • Posters",
       logo: "/Images/b2.png",
-      desc: "Creating AI-assisted short-form videos, graphics, and social-first content that transforms ideas into engaging visual experiences for modern audiences.",
+      desc: "A cinema-first creative page where I explore film edits, visual storytelling, posters, and content inspired by the movies I love.",
       platform: "instagram",
       url: "https://www.instagram.com/eswars.mixchar?igsh=MXY1d29vZGJkZnp2bQ=="
     }
@@ -595,7 +595,7 @@ function App() {
               maxWidth: '520px',
               opacity: 0.85
             }}>
-              Editing, design, storytelling, and AI are things I've learned.<br />
+              Editing, design, storytelling, and AI are things I've learning.<br />
               Cinema is the reason I wanted to learn them in the first place
             </p>
           </div>
@@ -768,7 +768,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 3: IMAGES (ART GALLERY) ================= */}
-      <section id="storytelling" className="scene-section">
+      <section id="storytelling" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">ART GALLERY</h2>
@@ -791,7 +791,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 4: VIDEO (AI WORKFLOW CASE STUDY) ================= */}
-      <section id="ai-workflow" className="scene-section" style={{ background: 'transparent', minHeight: '80vh', padding: '80px 5vw 60px 5vw', display: 'flex', flexDirection: 'column' }}>
+      <section id="ai-workflow" className="scene-section" style={{ background: 'transparent', minHeight: '80vh', padding: '90px 5vw 70px 5vw', display: 'flex', flexDirection: 'column' }}>
         <div style={{ ...styles.container, width: '100%', display: 'flex', flexDirection: 'column' }}>
           
           {/* Header with Title & Winner Badge */}
@@ -845,8 +845,8 @@ function App() {
                 <div className="case-study-slide">
                   <div className="screenplay-container" style={{ maxHeight: '450px', borderLeft: '3px solid var(--accent-violet)', background: '#0a0a0f', padding: '24px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.7rem', color: 'var(--accent-violet)', marginBottom: '1rem', fontStyle: 'italic', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', fontFamily: 'monospace', letterSpacing: '1px' }}>
-                      <span>CONCEPT & CHALLENGE BRIEF</span>
-                      <span>GENRE: SCI-FI COMEDY / ANIME HYBRID</span>
+                      <span>Team Pradeep Ranganathan CHALLENGE</span>
+                      <span>AI Artist</span>
                     </div>
                     <p className="font-recoleta" style={{ fontSize: '1.05rem', color: '#e2e8f0', lineHeight: '1.8', margin: 0 }}>
                       We show a remote, the camera zooms in to the remote. Inside the remote a Pixar style ant bites the wire, looks at the camera and winks. The background is realistic but only the ant should be in the pixar style. Now Pradeep comes and takes the remote and presses a button, a shock hits, he gets into the TV with the remote, he is in a historical battle field. His costume changes according to the historical world with the crown. He runs from the war, fights some people and escapes. Then he presses the next channel button, and now goes to the cartoon world in a stylish 3D animation / anime style. Now Pradeep is in a museum, it's a futuristic gadget museum, some masked men come to steal the gadget, Pradeep stops them. He fights with comical stylish action. Now he presses the turn off button. He comes out to the normal world. At the end we cut back inside the remote and the Pixar style ant winks again.
@@ -857,50 +857,50 @@ function App() {
 
               {activeWorkflowStep === 1 && (
                 <div className="case-study-slide">
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '10px 0' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', padding: '10px 0' }}>
                     
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px' }}>
-                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid var(--accent-violet)' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px' }}>
+                      
+                      {/* Step 1 */}
+                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid var(--accent-violet)', background: 'rgba(139, 92, 246, 0.03)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
                         <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-violet)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
-                          01 // STORYBOARD & PACING
+                          01 // MUSIC & EMOTIONAL PACING
                         </span>
-                        <h4 className="font-peacesans" style={{ color: '#fff', fontSize: '1.05rem', marginBottom: '8px', letterSpacing: '0.5px' }}>
-                          Shot Selection & Rhythm
-                        </h4>
-                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
-                          Pre-planning camera angles, whip-pans, and scene pacing before executing any generative tools to maintain narrative control.
+                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                          I usually start with the music because it helps me understand the pace and emotion before I begin creating anything.
                         </p>
                       </div>
 
-                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid rgba(255, 255, 255, 0.2)' }}>
-                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
-                          02 // CHARACTER & STYLE LOCK
+                      {/* Step 2 */}
+                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
+                          02 // CHARACTER & SCENE VISUALS
                         </span>
-                        <h4 className="font-peacesans" style={{ color: '#fff', fontSize: '1.05rem', marginBottom: '8px', letterSpacing: '0.5px' }}>
-                          Visual Continuity
-                        </h4>
-                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
-                          Anchoring facial features, costume references, and lighting signatures across generative video and rendering passes.
+                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                          Once the mood is clear, I focus on keeping the characters consistent and generate the visuals needed for each scene.
                         </p>
                       </div>
 
-                      <div style={{ paddingLeft: '16px', borderLeft: '2px solid rgba(255, 255, 255, 0.2)' }}>
-                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
-                          03 // POST-PRODUCTION & SOUND
+                      {/* Step 3 */}
+                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid rgba(255, 255, 255, 0.3)', background: 'rgba(255, 255, 255, 0.02)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
+                          03 // TIMELINE & EDITING FINESSE
                         </span>
-                        <h4 className="font-peacesans" style={{ color: '#fff', fontSize: '1.05rem', marginBottom: '8px', letterSpacing: '0.5px' }}>
-                          Edit, Score & Polish
-                        </h4>
-                        <p className="font-recoleta" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
-                          Assembling keyframes, precision sound FX design, speed ramping, and final color grading to turn raw renders into a master edit.
+                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                          After that, I bring everything into the timeline and fine-tune it with transitions, keyframes, speed ramps, and effects until it feels smooth and connected.
                         </p>
                       </div>
-                    </div>
 
-                    <div style={{ background: 'rgba(139, 92, 246, 0.06)', border: '1px solid rgba(139, 92, 246, 0.2)', borderRadius: '8px', padding: '20px 24px' }}>
-                      <p className="font-recoleta" style={{ fontSize: '1.05rem', color: '#e2e8f0', fontStyle: 'italic', lineHeight: '1.6', margin: 0 }}>
-                        "For me, AI is simply an instrument. Vision, pacing, and emotional direction will always dictate the final cut."
-                      </p>
+                      {/* Step 4 */}
+                      <div style={{ paddingLeft: '18px', borderLeft: '2px solid var(--accent-gold)', background: 'rgba(212, 175, 55, 0.03)', padding: '16px 20px', borderRadius: '0 8px 8px 0' }}>
+                        <span className="font-dopestyle" style={{ fontSize: '0.75rem', color: 'var(--accent-gold)', display: 'block', marginBottom: '6px', letterSpacing: '1.5px' }}>
+                          04 // CREATIVE DIRECTION
+                        </span>
+                        <p className="font-recoleta" style={{ fontSize: '0.95rem', color: '#e2e8f0', lineHeight: '1.65', margin: 0 }}>
+                          For me, AI is just a tool. The vision, pacing, and storytelling still come from the creative decisions made throughout the process.
+                        </p>
+                      </div>
+
                     </div>
 
                   </div>
@@ -944,7 +944,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 5: TOOLS (TOOLS I USE) ================= */}
-      <section id="tools-stack" className="scene-section" style={{ background: 'transparent' }}>
+      <section id="tools-stack" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">TOOLS I USE</h2>
@@ -983,7 +983,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 6: EXPERIENCE (PROFESSIONAL PATHWAY) ================= */}
-      <section id="experience" className="scene-section" style={{ background: 'transparent' }}>
+      <section id="experience" className="scene-section" style={{ background: 'transparent', padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">PROFESSIONAL PATHWAY</h2>
@@ -1000,7 +1000,7 @@ function App() {
                 </div>
                 <div style={styles.timelineMainContent}>
                   <h3 style={styles.experienceRole} className="font-peacesans">{exp.role}</h3>
-                  <p style={styles.experienceDesc} className="font-midlenorth">"{exp.description}"</p>
+                  <p style={styles.experienceDesc} className="font-midlenorth">{exp.description}</p>
                 </div>
               </div>
             ))}
@@ -1009,7 +1009,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 7: BEYOND WORK ================= */}
-      <section id="beyond-work" className="scene-section">
+      <section id="beyond-work" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">BEYOND WORK</h2>
@@ -1144,7 +1144,7 @@ function App() {
               </h2>
               
               <p style={{ ...styles.finalText, textAlign: 'left', margin: 0 }} className="font-midlenorth">
-                I enjoy building stories with people who care about them. Whether it's planning a sequence, refining an edit, experimenting with AI, or solving creative challenges, I bring curiosity, ownership, and a constant desire to improve. If my way of thinking resonates with your team, I'd love the opportunity to help bring your next story to life.
+                Cinema is something I'm genuinely passionate about, and I'd love to be part of a team that shares the same passion. I'm looking forward to contributing, learning, and growing with every project that comes my way. I know there's still so much for me to learn, and that's exactly what excites me about this journey. I hope we get the chance to learn, grow, and make great cinema together.
               </p>
 
               <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
