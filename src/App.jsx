@@ -5,11 +5,15 @@ import {
   Briefcase, Mail, FileText, ExternalLink, Sparkles, Camera,
   Clapperboard, Monitor, Image, Info, Send
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import GradientWaves from './GradientWaves';
 import LineSidebar from './LineSidebar';
+import IntroAnimation from './components/Intro/IntroAnimation';
 
 function App() {
   // States
+  const [introFinished, setIntroFinished] = useState(false);
+  const [isHandoffDone, setIsHandoffDone] = useState(false);
   const [activeGalleryImage, setActiveGalleryImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
   const [activeWorkflowStep, setActiveWorkflowStep] = useState(0);
@@ -561,10 +565,25 @@ function App() {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--bg-deep)', position: 'relative' }}>
+    <>
+      {/* Cinematic Clapperboard Intro Animation */}
+      <IntroAnimation 
+        onHandoff={() => setIsHandoffDone(true)} 
+        onComplete={() => {
+          setIsHandoffDone(true);
+          setIntroFinished(true);
+        }} 
+      />
 
-      {/* Global Fixed Live Gradient Waves Background */}
-      <div style={styles.darkVeilBackground} className="global-live-bg">
+      <motion.div 
+        style={{ backgroundColor: 'var(--bg-deep)', position: 'relative' }}
+        initial={introFinished ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 24, filter: 'blur(20px)' }}
+        animate={isHandoffDone || introFinished ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 24, filter: 'blur(20px)' }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      >
+
+        {/* Global Fixed Live Gradient Waves Background */}
+        <div style={styles.darkVeilBackground} className="global-live-bg">
         <GradientWaves
           horizonColor="#5227FF"
           waveColor="#FF9FFC"
@@ -594,11 +613,39 @@ function App() {
 
       {/* Floating Minimal HUD Navbar */}
       <header style={styles.hudNavbar}>
-        <div style={{ ...styles.hudLogo, cursor: 'pointer' }} onClick={() => {
-          scrollTo('landing');
-          setIsMobileMenuOpen(false);
-        }}>
-          <img src="/Images/logo.png" alt="Eswar Logo" style={{ ...styles.hudLogoImage, cursor: 'pointer' }} />
+        <div 
+          style={{ ...styles.hudLogo, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px' }} 
+          onClick={() => {
+            scrollTo('landing');
+            setIsMobileMenuOpen(false);
+          }}
+        >
+          {/* Flat Vector Clapperboard Icon */}
+          <motion.div
+            id="navbar-logo-icon"
+            initial={isHandoffDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            animate={isHandoffDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <Clapperboard size={22} style={{ color: '#a855f7' }} />
+          </motion.div>
+
+          {/* Brand Text */}
+          <motion.span
+            className="font-peacesans"
+            initial={isHandoffDone ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+            animate={isHandoffDone ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
+            style={{
+              fontSize: '1.2rem',
+              letterSpacing: '1.5px',
+              color: '#ffffff',
+              fontWeight: 700
+            }}
+          >
+            ESWAR
+          </motion.span>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -1412,8 +1459,8 @@ function App() {
         </div>
       )}
 
-
-    </div>
+      </motion.div>
+    </>
   );
 }
 

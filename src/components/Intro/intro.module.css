@@ -1,0 +1,234 @@
+/* Intro Container & Background */
+.introWrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.2), transparent 65%), #050505;
+  overflow: hidden;
+  pointer-events: all;
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.95);
+}
+
+/* Clapperboard Container */
+.clapperboardContainer {
+  position: relative;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center center;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Purple Glow effect behind Clapperboard */
+.boardGlow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 24px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.45) 0%, rgba(124, 58, 237, 0.15) 50%, transparent 80%);
+  filter: blur(25px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.boardGlowActive {
+  opacity: 1;
+  transform: scale(1.15);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, rgba(124, 58, 237, 0.35) 60%, transparent 85%);
+}
+
+/* Clapper Top Slate Hinge Assembly */
+.topSlateWrapper {
+  width: 100%;
+  position: relative;
+  transform-origin: bottom left;
+  z-index: 10;
+}
+
+.topSlate {
+  width: 100%;
+  height: 48px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffffff 0,
+    #ffffff 22px,
+    #130f26 22px,
+    #130f26 44px
+  );
+  border-radius: 8px 8px 2px 2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 2px solid #7c3aed;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Metallic Hinge Pin */
+.hingePin {
+  position: absolute;
+  left: 12px;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #a855f7 0%, #5b21b6 100%);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+  z-index: 20;
+}
+
+/* Bottom Slate Stick */
+.bottomStick {
+  width: 100%;
+  height: 48px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffffff 0,
+    #ffffff 22px,
+    #130f26 22px,
+    #130f26 44px
+  );
+  border-radius: 2px 2px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(124, 58, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 4px;
+}
+
+/* Main Clapperboard Body */
+.boardBody {
+  width: 100%;
+  background: linear-gradient(145deg, #15102a 0%, #0a0815 100%);
+  border-radius: 0 0 14px 14px;
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  border-top: none;
+  padding: 24px 28px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Metallic Corner Accents */
+.boardBody::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7, #7c3aed);
+}
+
+/* Grid Layout inside Clapperboard */
+.boardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  color: #a855f7;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.directorRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+
+.actionTag {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+  background: linear-gradient(90deg, #ffffff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 4px;
+}
+
+/* Fullscreen Flash Overlay */
+.flashOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+/* Particle Container */
+.particleContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #a855f7 70%, #7c3aed 100%);
+  box-shadow: 0 0 12px #a855f7, 0 0 24px #7c3aed;
+  pointer-events: none;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+  .clapperboardContainer {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  .clapperboardContainer {
+    transform: scale(0.72);
+  }
+}
+
+@media (max-width: 480px) {
+  .clapperboardContainer {
+    transform: scale(0.62);
+  }
+}
