@@ -575,15 +575,10 @@ function App() {
         }} 
       />
 
-      <motion.div 
-        style={{ backgroundColor: 'var(--bg-deep)', position: 'relative' }}
-        initial={introFinished ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 24, filter: 'blur(20px)' }}
-        animate={isHandoffDone || introFinished ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 24, filter: 'blur(20px)' }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      >
-
-        {/* Global Fixed Live Gradient Waves Background */}
-        <div style={styles.darkVeilBackground} className="global-live-bg">
+      {/* ===== GLOBAL BACKGROUND: MUST BE OUTSIDE motion.div ===== */}
+      {/* position:fixed inside a CSS-transformed ancestor is broken — it gets */}
+      {/* fixed relative to the transform, not the viewport. Keep it here. */}
+      <div style={styles.darkVeilBackground} className="global-live-bg">
         <GradientWaves
           horizonColor="#5227FF"
           waveColor="#FF9FFC"
@@ -610,6 +605,14 @@ function App() {
 
       {/* Cinematic Moving Spotlight Light Beam */}
       <div className="light-beam"></div>
+
+      {/* Portfolio content — animate opacity only (no transform that would trap fixed children) */}
+      <motion.div
+        style={{ position: 'relative' }}
+        initial={{ opacity: isHandoffDone ? 1 : 0 }}
+        animate={{ opacity: isHandoffDone || introFinished ? 1 : 0 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      >
 
       {/* Floating Minimal HUD Navbar */}
       <header style={styles.hudNavbar}>
@@ -720,7 +723,8 @@ function App() {
       </section>
 
       {/* ================= SECTION 2: VIDEO (THE EDITING ROOM) ================= */}
-      <section id="editing-room" className="scene-section">
+      {/* TRANSPARENT — GradientWaves shows through */}
+      <section id="editing-room" className="scene-section" style={{ padding: '90px 5vw', background: 'transparent' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">THE EDITING ROOM</h2>
@@ -868,7 +872,8 @@ function App() {
       </section>
 
       {/* ================= SECTION 3: IMAGES (ART GALLERY) ================= */}
-      <section id="storytelling" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
+      {/* GLASS — alternating glassmorphic section */}
+      <section id="storytelling" className="scene-section glass-section" style={{ padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">ART GALLERY</h2>
@@ -891,6 +896,8 @@ function App() {
       </section>
 
       {/* ================= SECTION 4: VIDEO (AI WORKFLOW CASE STUDY) ================= */}
+      {/* ================= SECTION 4: AI WORKFLOW ================= */}
+      {/* TRANSPARENT — GradientWaves shows through */}
       <section id="ai-workflow" className="scene-section" style={{ background: 'transparent', minHeight: '80vh', padding: '90px 5vw 70px 5vw', display: 'flex', flexDirection: 'column' }}>
         <div style={{ ...styles.container, width: '100%', display: 'flex', flexDirection: 'column' }}>
           
@@ -1054,7 +1061,8 @@ function App() {
       </section>
 
       {/* ================= SECTION 5: TOOLS (TOOLS I USE) ================= */}
-      <section id="tools-stack" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
+      {/* GLASS — alternating glassmorphic section */}
+      <section id="tools-stack" className="scene-section glass-section" style={{ padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">TOOLS I USE</h2>
@@ -1093,6 +1101,7 @@ function App() {
       </section>
 
       {/* ================= SECTION 6: EXPERIENCE (PROFESSIONAL PATHWAY) ================= */}
+      {/* TRANSPARENT — GradientWaves shows through */}
       <section id="experience" className="scene-section" style={{ background: 'transparent', padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
@@ -1118,8 +1127,9 @@ function App() {
         </div>
       </section>
 
-      {/* ================= SECTION 7: BEYOND WORK ================= */}
-      <section id="beyond-work" className="scene-section" style={{ background: 'rgba(12, 12, 18, 0.45)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255, 255, 255, 0.06)', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', padding: '90px 5vw' }}>
+      {/* ================= SECTION 7: BEYOND WORK (VENTURES) ================= */}
+      {/* GLASS — alternating glassmorphic section */}
+      <section id="beyond-work" className="scene-section glass-section" style={{ padding: '90px 5vw' }}>
         <div style={styles.container}>
           <div style={styles.textCenter} className="fade-up-element">
             <h2 style={styles.sectionHeading} className="font-peacesans">BEYOND WORK</h2>
@@ -1191,16 +1201,15 @@ function App() {
         </div>
       </section>
 
-      {/* Top Footer Gradient Line Separator */}
-      <div style={{ width: '100%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), rgba(212, 175, 55, 0.5), transparent)' }}></div>
-
       {/* ================= SECTION 8: FINAL UNIFIED FOOTER ================= */}
       <footer id="contact" className="scene-section" style={{ 
-        background: 'rgba(8, 8, 14, 0.88)', 
-        backdropFilter: 'blur(20px)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.7)',
-        padding: '70px 5vw 90px 5vw',
+        background: '#060609', 
+        minHeight: '55vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        boxShadow: '0 -20px 60px rgba(0, 0, 0, 0.95)',
+        padding: '60px 5vw 70px 5vw',
         position: 'relative',
         zIndex: 5
       }}>
